@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualização 3D + AR</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .logo {
+      width: 150px;
+      margin: 20px auto;
+      display: block;
+    }
+    model-viewer {
+      width: 100%;
+      height: 70vh;
+      background: #111;
+      border-radius: 12px;
+    }
+    .instructions {
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-top:10px; margin-bottom:20px; font-size:1.6rem; font-weight:bold; color:#00d4ff; text-align:center;">Visualize aqui seu projeto 3D</h1>
+
+  <!-- LOGO (coloque o arquivo .png na mesma pasta do index) -->
+  <!-- VISOR DO MODELO -->
+  <model-viewer
+    src="model.glb"  
+    ios-src="model.usdz"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1">
+  </model-viewer>
+
+  <!-- INSTRUÇÕES NA TELA -->
+  <div class="instructions">
+    <h2>Como visualizar o modelo</h2>
+    <p>• Toque e arraste com um dedo para girar o modelo.</p>
+    <p>• Use dois dedos para aproximar ou afastar.</p>
+    <p>• Mova em círculo para explorar todos os ângulos.</p>
+    <h2>Como ver em Realidade Aumentada</h2>
+    <p>• Clique no ícone de AR que aparece no visor.</p>
+    <p>• No Android, abrirá o "Scene Viewer" automaticamente.</p>
+    <p>• No iPhone, abrirá o "AR Quick Look".</p>
+  </div>
+
+</body>
+</html>
